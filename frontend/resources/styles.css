@@ -1,0 +1,33 @@
+/*Note to Anthony - not totally committed to this background or typefaces by any means, but this is kinda what I'm thinking layout wise - try to keep it as minimal as possible, avoid distractions that ruin the immersion?*/
+
+body {
+    background-image: url("images/pexels-photo-23949.jpg");
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+}
+
+.customNav {
+    text-align: right;
+    padding-top:1em;
+}
+.customNavLinks {
+    padding: 1em;
+    color: lightgray;
+}
+.navTitle {
+    text-align: left;
+    padding-top:1em;
+    color: lightgray;
+}
+.mainContent {
+    padding-top: 10em;
+    color: white;
+}
+
+.msgDisplay {
+    padding-bottom: 1em;
+}
+
+h1 {
+    font-family: 'Droid Serif', serif;
+}
