@@ -9,7 +9,8 @@ var expressJwt = require('express-jwt');
 
 //require server modules
 var config = require("./secretConfig.js");
-
+var authRoutes = require("./routes/authRoute.js");
+var highscoreRoute = require('./routes/highscoreRoute.js')
 
 //create the server by calling express
 var app = express();
@@ -31,6 +32,9 @@ app.use(express.static(path.join(__dirname,"..",'frontend')))
 
 //routes will be added as they're created here.
 //each route will also be added as a dependancy above.
+app.use("/api/highscores", highscoreRoute);
+app.use("/auth", authRoutes);
+
 
 
 //listen
