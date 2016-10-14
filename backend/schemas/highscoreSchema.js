@@ -2,7 +2,7 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 var ObjectId = Schema.ObjectId;
-var scoreSchema = require("./scoreSchema");
+var highscoreSchema = require("./highscoreSchema");
 
 //HighScoreSchema
 var highscoreSchema = new Schema ({
