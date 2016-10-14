@@ -9,7 +9,7 @@ var highscoreSchema = new Schema ({
   highscore: Number,
   user: {
     type: Schema.Types.ObjectId,
-    ref: "user"
+    ref: "User"
   }
   
 });
