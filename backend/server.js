@@ -5,6 +5,11 @@ var logger = require("morgan");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var path = require("path");
+var expressJwt = require('express-jwt');
+
+//require server modules
+var config = require("./secretConfig.js");
+
 
 //create the server by calling express
 var app = express();
@@ -16,6 +21,9 @@ mongoose.connect("mongodb://localhost/", function(){
 app.use(cors());
 app.use(logger("dev"));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
 
 app.use(express.static(path.join(__dirname,"..",'frontend')))
 
