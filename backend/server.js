@@ -5,6 +5,12 @@ var logger = require("morgan");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var path = require("path");
+var expressJwt = require('express-jwt');
+
+//require server modules
+var config = require("./secretConfig.js");
+var authRoutes = require("./routes/authRoute.js");
+var highscoreRoute = require('./routes/highscoreRoute.js')
 
 //create the server by calling express
 var app = express();
@@ -16,6 +22,9 @@ mongoose.connect("mongodb://localhost/", function(){
 app.use(cors());
 app.use(logger("dev"));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
 
 app.use(express.static(path.join(__dirname,"..",'frontend')))
 
@@ -23,6 +32,9 @@ app.use(express.static(path.join(__dirname,"..",'frontend')))
 
 //routes will be added as they're created here.
 //each route will also be added as a dependancy above.
+app.use("/api/highscores", highscoreRoute);
+app.use("/auth", authRoutes);
+
 
 
 //listen
