@@ -6,9 +6,7 @@ var Highscore = require('../schemas/highscoreSchema.js');
 //this route will be used to pull all highscores to view on like a leader board
 highscoreRoute.route('/')
   .get(function(req,res) {
-    Highscore.find({
-      user:req.user._is
-    }, function(err, highscores) {
+    Highscore.find({}, function(err, highscores) {
       if(err) res.status(500).send(err);
       res.send(highscores);
     });
