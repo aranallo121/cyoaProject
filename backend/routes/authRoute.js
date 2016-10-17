@@ -5,6 +5,14 @@ var jwt = require('jsonwebtoken');
 var config = require('../secretConfig.js');
 
 //create a route to post to the /signup endpoint
+authRoute.route("/users")
+.get(function(req,res){
+  User.find({}, function(err, users) {
+    if(err) res.status(500).send(err);
+    res.send(users);
+  });
+})
+
 authRoute.post('/signup', function(req, res) {
   User.find({
     username: req.body.username
