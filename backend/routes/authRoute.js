@@ -63,7 +63,7 @@ authRoute.post("/login", function(req, res) {
             token: token,
             user: foundUser.withoutPassword(),
             success: true,
-            message: "Enjoy your stuped userObject and token"
+            message: "Enjoy your stupid userObject and token"
           });
         }
       })
