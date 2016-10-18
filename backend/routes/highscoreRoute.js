@@ -5,8 +5,11 @@ var Highscore = require('../schemas/highscoreSchema.js');
 
 //this route will be used to pull all highscores to view on like a leader board
 highscoreRoute.route('/')
-  .get(function(req,res) {
-    Highscore.find({}, function(err, highscores) {
+  .get(function(req, res) {
+    Highscore.find({
+      user:req.user._id
+    }, function(err, highscores) {
+
       if(err) res.status(500).send(err);
       res.send(highscores);
     });
@@ -19,7 +22,7 @@ highscoreRoute.route('/')
     highscore.save(function (err, newHighscore) {
       if(err) res.status(500).send(err);
       res.status(201).send(newHighscore);
-    })
+  });
   });
 
 
@@ -50,11 +53,3 @@ highscoreRoute.route('/:highscoreId')
   });
 
 module.exports = highscoreRoute;
-  
-
-
-
-
-
-
-

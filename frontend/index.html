@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="MainApp">
 
 <head>
     <meta charset="UTF-8">
@@ -27,9 +27,7 @@
                 <a href="#/about" class="customNavLinks">About</a>
             </div>
             <div class="col-md-12 mainContent text-center">
-                <h1 class="msgDisplay">"There's something really strange going on in your psyche", she said...Whilst never breaking eye contact.</h1>
-                <a href="#/login" class="btn btn-success btn-lg" role="button">Sign in</a>
-                <a href="#/guest" class="btn btn-danger btn-lg" role="button">Guest</a>
+                <ng-view></ng-view>
             </div>
         </div>
     </div>
@@ -38,14 +36,17 @@
     <!-- Script tags for CDNs and personal JS files -->
     <script src="http://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
 <<<<<<< HEAD
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js" integrity="sha256-OxCsGH/j2k+Ub6Lo55TiYwZ94bv9Jmgvbn7gDahtiIs=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js" integrity="sha256-SAQ4JgNuN5J22HeNmrNXLyvqEh6gUoWsetBCX8EUnZQ=" crossorigin="anonymous"></script>
+<!-- angular refs -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+
     <script src="app.js"></script>
-    <script src="config.js"></script>
-=======
-    
-    <script src="app.js"></script>
-    <script src="config.js"></script>
+    <script src="config.js"></script> -->
+    <script src="/resources/controllers/homecontroller.js"></script>
+    <script src="/resources/controllers/firstslidecontroller.js"></script>
 
 
 >>>>>>> master
