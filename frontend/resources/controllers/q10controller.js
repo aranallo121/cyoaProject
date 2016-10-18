@@ -1,9 +1,9 @@
 var app = angular.module("MainApp");
 
-app.controller("Q1Controller", function($scope) {
-    $scope.question = "You walk in the door, set your bag down, and walk in the kitchen. \"Hi, honey!\" exclaims your mom. You reply,";
-    $scope.answer1 = "\"Hey mom...How's it going?\"";
-    $scope.answer2 = "\"God is dead and we are all decaying matter\"";
-    $scope.direct1 = "#/q2";
-    $scope.direct2 = "#/q4";
+app.controller("Q10Controller", function($scope) {
+    $scope.question = "You kill your dad and abscond with your mother to the Florida Keys. You have succumbed to the OEDIPUS CYCLE.";
+    $scope.answer1 = "Play Again";
+    $scope.answer2 = "There is no escape from your unending subconcious torment";
+    $scope.direct1 = "#/q1";
+    $scope.direct2 = "#/q1";
 });
