@@ -13,11 +13,13 @@ app.config(function($routeProvider){
     .when("/leaderboard", {
         templateUrl: "./templates/leaderboard.html"
     })
-    .when("/pg1", {
-        templateUrl: "./templates/page1.html"
+    .when("/q1", {
+        templateUrl: "./templates/page1.html",
+        controller: "Q1Controller"
     })
-    .when("/pg2", {
-        templateUrl: "./templates/page2.html"
+    .when("/pg1", {
+        templateUrl: "./templates/page1.html",
+        controller: "SlideController"
     });
 
     //as we add pages, we'll add more views and create the html files in the templates folder

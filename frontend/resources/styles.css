@@ -23,9 +23,13 @@ body {
     padding-top: 10em;
     color: white;
 }
-
 .msgDisplay {
     padding-bottom: 1em;
+}
+.answerButton {
+    display: inline-block !important;
+    width: 50%;
+    white-space: normal;
 }
 
 h1 {
