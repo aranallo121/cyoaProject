@@ -9,6 +9,7 @@ highscoreRoute.route('/')
     Highscore.find({
       user:req.user._id
     }, function(err, highscores) {
+
       if(err) res.status(500).send(err);
       res.send(highscores);
     });
@@ -21,7 +22,7 @@ highscoreRoute.route('/')
     highscore.save(function (err, newHighscore) {
       if(err) res.status(500).send(err);
       res.status(201).send(newHighscore);
-    })
+  });
   });
 
 
