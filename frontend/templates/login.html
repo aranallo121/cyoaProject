@@ -1,1 +1,75 @@
-<h1>login test</h1>
+<div class="container">    
+  <div id="loginbox" ng-show="showLogin" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+    <div class="panel panel-info" >
+      <div class="panel-heading">
+        <div class="panel-title">Sign In</div>
+        </div>     
+        <div style="padding-top:30px" class="panel-body" >
+            <form id="loginform" class="form-horizontal" role="form">
+                <div style="margin-bottom: 25px" class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                  <input id="login-username" type="text" class="form-control" ng-model="loginName" value="" placeholder="username or email">
+                </div>               
+                <div style="margin-bottom: 25px" class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input id="login-password" type="password" class="form-control" ng-model="loginPass" placeholder="password">
+                </div>  
+                <div style="margin-top:10px" class="form-group">
+                    <!-- Button -->
+                    <div class="col-sm-12 controls">
+                      <a id="btn-login" ng-click="loginUser(loginName, loginPass)" class="btn btn-success">Login </a>
+                      <a id="btn-fblogin" ng-click="toggleLogin()" class="btn btn-primary">Sign Up</a>
+
+                    </div>
+                </div>
+            </form>     
+          </div>                     
+      </div>  
+  </div>
+<!---------End SignIn box, begin SignUp box-----------> 
+  <div id="signupbox" ng-show="!showLogin" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <div class="panel panel-info">
+          <div class="panel-heading">
+              <div class="panel-title">Sign Up</div>
+          </div>  
+          <div class="panel-body" >
+              <form id="signupform" class="form-horizontal" role="form">
+                  <div id="signupalert" style="display:none" class="alert alert-danger">
+                      <p>Error:</p>
+                      <span></span>
+                  </div>
+                  <div class="form-group">
+                      <label for="email" class="col-md-3 control-label">Email</label>
+                      <div class="col-md-9">
+                          <input type="text" class="form-control" ng-model="email" placeholder="Email Address">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="firstname" class="col-md-3 control-label">Username</label>
+                      <div class="col-md-9">
+                          <input type="text" class="form-control" ng-model="username" placeholder="Username">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="password" class="col-md-3 control-label">Password</label>
+                      <div class="col-md-9">
+                          <input type="password" class="form-control" ng-model="password" placeholder="Password">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <!-- Button -->                                        
+                      <div class="col-md-offset-3 col-md-9">
+                          <button id="btn-signup" ng-click= "newUser(username, password)" type="button" class="btn btn-info">Sign Up</button>
+                      </div>
+                  </div>
+                  <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
+                      <div class="col-md-offset-3 col-md-9">
+                          <button id="btn-fbsignup" ng-click="toggleLogin()" type="button" class="btn btn-primary">Sign In</button>
+                      </div>                                           
+                  </div>
+              </form>
+           </div>
+      </div>
+   </div> 
+</div>
+    
