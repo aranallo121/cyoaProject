@@ -35,3 +35,8 @@ body {
 h1 {
     font-family: 'Droid Serif', serif;
 }
+
+/*=====LoginPage========*/
+#signupbox label {
+  color: black
+}

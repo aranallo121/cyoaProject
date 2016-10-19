@@ -49,6 +49,7 @@ authRoute.post("/login", function(req, res) {
       });
     } else if (foundUser) {
       foundUser.checkPassword(req.body.password, function (err, match) {
+        console.log("user found in authRoute")
         if(err) throw (err);
         if (!match) {
           res.status(402).send({

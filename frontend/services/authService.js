@@ -1,22 +1,26 @@
 var app = angular.module("MainApp");
 
-app.service("LoginService", ["$http", "TokenService", function($http, TokenService){
+app.service("LoginService", ["$http", "$location", "TokenService", "AuthInterceptor", function($http, $location, TokenService, AuthInterceptor){
   
 //login service to add a new user. Takes a new user object
   this.user = {};
   
   this.login = function(userObj){
+    console.log("loggin in: " + userObj)
     return $http.post("/auth/login", userObj).then(function(response) {
       console.log(response.data);
       this.user = response.data.user;
       TokenService.setToken(response.data.token);
+      $location.path("/q1");
       return response.data
     })
   }
   
   this.signup = function(userObj){
+    console.log("sending" + userObj)
     return $http.post("/auth/signup", userObj).then(function(response) {
       return response.data
+      console.log(response.data)
     })
   }
   
@@ -51,7 +55,7 @@ app.factory("AuthInterceptor", function($q, $location, TokenService){
 });
 
 app.config(function($httpProvider){
-  $httpProvider.intercepotors.push("AuthInterceptor");
+  $httpProvider.interceptors.push("AuthInterceptor");
 });
 
 
