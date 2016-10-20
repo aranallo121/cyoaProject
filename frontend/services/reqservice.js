@@ -8,8 +8,10 @@ this.addPoint = function() {
     this.scoreCount ++;
     console.log(this.scoreCount);
 };
+this.sendPoints = function() {
+    console.log(this.scoreCount);
+};
 console.log("hitting the req service" + this.scoreCount);
-
     // this.getUsers = $http.get("http://localhost:8888/routegoeshere").then(function(response) {
     //     return response.data;
     // });
