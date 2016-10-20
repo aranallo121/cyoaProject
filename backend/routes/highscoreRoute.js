@@ -7,22 +7,24 @@ var Highscore = require('../schemas/highscoreSchema.js');
 highscoreRoute.route('/')
   .get(function(req, res) {
     Highscore.find({
-      user:req.user._id
     }, function(err, highscores) {
 
       if(err) res.status(500).send(err);
       res.send(highscores);
     });
   })
+  .put(function(req, res) {
+  
+})
 
 //the post will add new highscores depending on how many pages a user sees while playing
   .post(function(req,res){
     var highscore = new Highscore(req.body);
-    highscore.user = req.user;
+    highscore.user = req.body.user._id;
     highscore.save(function (err, newHighscore) {
       if(err) res.status(500).send(err);
       res.status(201).send(newHighscore);
-  });
+    });
   });
 
 
