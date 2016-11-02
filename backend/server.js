@@ -10,7 +10,7 @@ var expressJwt = require('express-jwt');
 //require server modules
 var config = require("./secretConfig.js");
 var authRoutes = require("./routes/authRoute.js");
-var highscoreRoute = require('./routes/highscoreRoute.js')
+var highscoreRoute = require('./routes/highscoreRoute.js');
 
 //create the server by calling express
 var app = express();
@@ -24,9 +24,9 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
-}))
+}));
 
-app.use(express.static(path.join(__dirname,"..",'frontend')))
+app.use(express.static(path.join(__dirname,"..",'frontend')));
 
 
 
@@ -39,5 +39,5 @@ app.use("/auth", authRoutes);
 
 //listen
 app.listen(8888, function() {
-  console.log("app is listening on port 8888")
-})
+  console.log("app is listening on port 8888");
+});

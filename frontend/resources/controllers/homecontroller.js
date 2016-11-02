@@ -31,6 +31,6 @@ app.controller("HomeController", ["$scope", "$location", "LoginService", "ReqSer
       };
       function objTest () {
           console.log("hitting the obj test");
-      console.log(userObj);
+
   }
       }]);
