@@ -1,13 +1,13 @@
 var app = angular.module("MainApp");
 
 app.service("LoginService", ["$http", "$location", "TokenService", "AuthInterceptor", function($http, $location, TokenService, AuthInterceptor) {
-
+    var baseUrl = "http://localhost:8888";
     //login service to add a new user. Takes a new user object
     this.user = {};
 
     this.login = function(userObj) {
         // console.log("loggin in: " + userObj)
-        return $http.post("/auth/login", userObj).then(function(response) {
+        return $http.post(baseUrl + "/auth/login", userObj).then(function(response) {
             // console.log(response.data);
             this.user = response.data.user;
             TokenService.setToken(response.data.token);
@@ -18,7 +18,7 @@ app.service("LoginService", ["$http", "$location", "TokenService", "AuthIntercep
 
     this.signup = function(userObj) {
         // console.log("sending" + userObj);
-        return $http.post("/auth/signup", userObj).then(function(response) {
+        return $http.post(baseUrl + "/auth/signup", userObj).then(function(response) {
             return response.data;
         });
     };

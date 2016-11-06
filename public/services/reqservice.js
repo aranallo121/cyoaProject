@@ -10,6 +10,7 @@ this.addPoint = function() {
 };
 this.sendPoints = function() {
     console.log(this.scoreCount);
+
 };
 
 });
